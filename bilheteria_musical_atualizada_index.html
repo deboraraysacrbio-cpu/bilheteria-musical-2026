@@ -1,0 +1,44 @@
+<!DOCTYPE html><html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#1c0d16"><title>Uma Aventura no Túnel do Tempo | Ingressos</title><style>
+:root{--gold:#f3ce83;--cream:#fff5df;--red:#7e1834}*{box-sizing:border-box}body{margin:0;background:#170c15;color:var(--cream);font-family:Arial,Helvetica,sans-serif;line-height:1.5}header{padding:20px;text-align:center;background:#240d1a;border-bottom:1px solid #815b39}header small{letter-spacing:3px;color:var(--gold)}.hero{position:relative;overflow:hidden;min-height:480px;display:grid;place-items:center;text-align:center;padding:80px 22px;background:radial-gradient(ellipse at 50% 20%,#683343 0,#310d20 50%,#130911 100%)}.hero:before,.hero:after{content:"";position:absolute;top:0;bottom:0;width:16%;background:repeating-linear-gradient(90deg,#500d23 0,#801c39 18%,#4b0c21 36%);filter:drop-shadow(0 0 16px #000);z-index:0}.hero:before{left:0;clip-path:polygon(0 0,100% 0,55% 100%,0 100%)}.hero:after{right:0;clip-path:polygon(0 0,100% 0,100% 100%,45% 100%)}.hero>div{position:relative;z-index:1;max-width:750px}.eyebrow{color:var(--gold);letter-spacing:4px;font-size:13px;text-transform:uppercase}h1{font-family:Georgia,serif;font-size:clamp(42px,8vw,85px);line-height:1.05;margin:20px 0;color:var(--gold);text-shadow:0 3px 12px #000}h2{font-family:Georgia,serif;color:var(--gold);font-size:34px;margin:0 0 18px}.sub{font-size:20px}.pill{display:inline-block;border:1px solid #d7a85f;border-radius:40px;padding:10px 20px;margin:6px;background:#26121dbb}main{max-width:1050px;margin:auto;padding:45px 18px}.grid{display:grid;grid-template-columns:1fr 1fr;gap:26px}.panel{background:#291620;border:1px solid #76503c;border-radius:18px;padding:28px;box-shadow:0 15px 40px #0003}.price{font-size:48px;font-weight:700;color:var(--gold)}label{display:block;margin:18px 0 7px;font-weight:700}input{width:100%;border:1px solid #9e7b69;background:#fffaf1;border-radius:9px;padding:13px;font-size:17px;color:#23151c}input:focus{outline:3px solid #dbaf6c}button,.button{display:block;width:100%;text-align:center;background:linear-gradient(135deg,#f6d891,#b8863e);color:#261019;border:0;border-radius:10px;padding:15px;font-size:17px;font-weight:800;text-decoration:none;cursor:pointer;margin-top:22px}button:hover,.button:hover{filter:brightness(1.07)}.total{font-size:23px;color:var(--gold);margin-top:18px}.note{font-size:13px;color:#e7d2c0}.steps{padding-left:20px}.steps li{margin:12px 0}.footer{text-align:center;padding:25px;color:#dbc8bd;border-top:1px solid #674532}.highlight{color:var(--gold)}.badge{font-size:13px;letter-spacing:1px;color:#ffe3a7}.pix{border:1px dashed #bd9366;padding:15px;border-radius:12px;background:#1d1118;margin-top:15px}a{color:#ffda90}@media(max-width:760px){.grid{grid-template-columns:1fr}.hero{min-height:430px;padding:55px 25px}.hero:before,.hero:after{width:11%}.panel{padding:22px}}
+</style></head><body><header><small>COLÉGIO SABERES DA VITÓRIA APRESENTA</small></header><section class="hero"><div><p class="eyebrow">Um espetáculo para toda a família</p><h1>Uma Aventura<br>no Túnel do Tempo</h1><p class="sub">Uma viagem musical pelas décadas de 1940 a 2000</p><div><span class="pill">📅 06 de dezembro de 2026</span><span class="pill">🕠 17h30</span><span class="pill">📍 Teatro Dona Amélia</span></div></div></section><main><div class="grid"><section class="panel" id="ingressos"><p class="badge">BILHETERIA DIGITAL</p>
+<h2>Compre seu ingresso</h2><p>Ingresso individual</p><div class="price">R$ 40,00</div>
+<form id="form"><label for="nome">Nome completo do responsável</label>
+<input id="nome" name="nome" required maxlength="100" autocomplete="name" placeholder="Digite seu nome">
+<label for="telefone">WhatsApp com DDD</label><input id="telefone" name="telefone" type="tel" required inputmode="tel" maxlength="20" placeholder="(87) 99999-9999">
+<label for="qtd">Quantidade de ingressos</label><input id="qtd" name="qtd" type="number" min="1" max="20" value="1" required>
+<div class="total" id="total" aria-live="polite">Total: R$ 40,00</div>
+<div class="pix"><strong>Chave Pix aleatória da bilheteria</strong>
+<p id="chave-pix" style="overflow-wrap:anywhere;user-select:all;font-size:16px">ac3d710b-0a86-4660-af19-c567e3cc27bd</p>
+<button type="button" id="copiar-pix">📋 Copiar chave Pix</button>
+<p id="aviso-copia" role="status" aria-live="polite"></p>
+<p><strong>Importante:</strong> confira o nome do destinatário no aplicativo do banco antes de confirmar a transferência. O pagamento só será validado após conferência pela secretaria.</p></div>
+<button type="submit">📲 Enviar dados e comprovante pelo WhatsApp</button>
+<p class="note">Ao tocar no botão, o WhatsApp será aberto com os dados do pedido. Anexe a imagem ou o PDF do comprovante na conversa e envie. O site não recebe comprovantes automaticamente.</p>
+</form></section><section class="panel"><p class="badge">COMO FUNCIONA</p><h2>Sua viagem começa aqui</h2>
+<ol class="steps"><li>Preencha seu nome, WhatsApp e a quantidade de ingressos.</li>
+<li>Confira o valor total e copie a chave Pix.</li>
+<li>Faça o Pix e confira os dados do destinatário no aplicativo do banco.</li>
+<li>Clique em “Enviar dados e comprovante”, anexe o comprovante na conversa e envie à secretaria.</li>
+<li>Após conferir o recebimento e a disponibilidade, a secretaria enviará os ingressos com QR Code pelo WhatsApp.</li>
+<li>Apresente o QR Code do ingresso na entrada do teatro.</li></ol>
+<div class="pix"><strong>🔒 Atenção</strong><p>O envio do comprovante não garante a reserva. Aguarde a confirmação da secretaria. Nunca compartilhe senhas bancárias.</p></div>
+<a class="button" href="https://wa.me/5587991967245" target="_blank" rel="noopener noreferrer">Falar com a bilheteria</a>
+<p class="note">WhatsApp: (87) 99196-7245</p></section></div><section style="text-align:center;padding:60px 12px 20px"><p class="eyebrow">Prepare-se para viajar no tempo</p><h2>Uma noite de música, história e emoção</h2><p>Das canções que marcaram gerações aos momentos inesquecíveis da história: venha prestigiar nossos alunos!</p></section></main><footer class="footer">Colégio Saberes da Vitória · Uma Aventura no Túnel do Tempo · 2026</footer><script>
+const qtd=document.getElementById('qtd'), total=document.getElementById('total');
+const pixKey=document.getElementById('chave-pix').textContent.trim();
+const moeda=v=>v.toLocaleString('pt-BR',{style:'currency',currency:'BRL'});
+function update(){const n=Math.max(1,Math.min(20,Number(qtd.value)||1));total.textContent='Total: '+moeda(n*40)}
+qtd.addEventListener('input',update);
+document.getElementById('copiar-pix').addEventListener('click',async()=>{
+ try { await navigator.clipboard.writeText(pixKey); document.getElementById('aviso-copia').textContent='Chave Pix copiada!'; }
+ catch(err){const r=document.createRange();r.selectNodeContents(document.getElementById('chave-pix'));const sel=window.getSelection();sel.removeAllRanges();sel.addRange(r);document.getElementById('aviso-copia').textContent='Selecione e copie a chave Pix exibida acima.';}
+});
+document.getElementById('form').addEventListener('submit',e=>{
+ e.preventDefault();if(!e.target.reportValidity())return;
+ const n=Number(qtd.value), nome=document.getElementById('nome').value.trim(), tel=document.getElementById('telefone').value.trim();
+ if(!Number.isInteger(n)||n<1||n>20){alert('Escolha de 1 a 20 ingressos.');return}
+ if(!nome||tel.replace(/\\D/g,'').length<10){alert('Informe nome e WhatsApp válido com DDD.');return}
+ const msg=`Olá! Fiz a solicitação de ingressos para o Musical 2026 — Uma Aventura no Túnel do Tempo.\\n\\nResponsável: ${nome}\\nWhatsApp: ${tel}\\nQuantidade: ${n}\\nValor total: ${moeda(n*40)}\\n\\nVou anexar o comprovante Pix nesta conversa. Aguardo a conferência do pagamento e a confirmação dos ingressos.`;
+ window.open('https://wa.me/5587991967245?text='+encodeURIComponent(msg),'_blank','noopener,noreferrer');
+});
+</script></body></html>
