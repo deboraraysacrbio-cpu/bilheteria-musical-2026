@@ -4,7 +4,6 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#1c0d16">
 
 <title>Uma Aventura no Túnel do Tempo | Ingressos</title>
 
@@ -55,8 +54,8 @@ header small {
   );
 }
 
-.hero:before,
-.hero:after {
+.hero::before,
+.hero::after {
   content: "";
   position: absolute;
   top: 0;
@@ -68,17 +67,16 @@ header small {
     #801c39 18%,
     #4b0c21 36%
   );
-  z-index: 0;
 }
 
-.hero:before {
+.hero::before {
   left: 0;
   clip-path: polygon(
     0 0, 100% 0, 55% 100%, 0 100%
   );
 }
 
-.hero:after {
+.hero::after {
   right: 0;
   clip-path: polygon(
     0 0, 100% 0, 100% 100%, 45% 100%
@@ -194,11 +192,6 @@ button,
   margin-top: 22px;
 }
 
-button:hover,
-.button:hover {
-  filter: brightness(1.07);
-}
-
 button:disabled {
   opacity: 0.6;
   cursor: wait;
@@ -268,7 +261,13 @@ a {
   color: white;
 }
 
-@media(max-width:760px) {
+#mensagemPedido.aviso {
+  display: block;
+  background: #59401c;
+  color: white;
+}
+
+@media (max-width: 760px) {
   .grid {
     grid-template-columns: 1fr;
   }
@@ -278,8 +277,8 @@ a {
     padding: 55px 25px;
   }
 
-  .hero:before,
-  .hero:after {
+  .hero::before,
+  .hero::after {
     width: 11%;
   }
 
@@ -300,7 +299,6 @@ a {
 
 <section class="hero">
   <div>
-
     <p class="eyebrow">
       Um espetáculo para toda a família
     </p>
@@ -311,8 +309,7 @@ a {
     </h1>
 
     <p class="sub">
-      Uma viagem musical pelas décadas
-      de 1940 a 2000
+      Uma viagem musical pelas décadas de 1940 a 2000
     </p>
 
     <div>
@@ -328,27 +325,21 @@ a {
         📍 Teatro Dona Amélia
       </span>
     </div>
-
   </div>
 </section>
 
 <main>
-
 <div class="grid">
 
 <section class="panel" id="ingressos">
 
-  <p class="badge">
-    BILHETERIA DIGITAL
-  </p>
+  <p class="badge">BILHETERIA DIGITAL</p>
 
   <h2>Compre seu ingresso</h2>
 
   <p>Ingresso individual</p>
 
-  <div class="price">
-    R$ 40,00
-  </div>
+  <div class="price">R$ 40,00</div>
 
   <form id="form">
 
@@ -362,7 +353,8 @@ a {
       required
       maxlength="100"
       autocomplete="name"
-      placeholder="Digite seu nome completo">
+      placeholder="Digite seu nome completo"
+    >
 
     <label for="telefone">
       WhatsApp com DDD
@@ -375,7 +367,8 @@ a {
       required
       inputmode="tel"
       maxlength="20"
-      placeholder="(87) 99999-9999">
+      placeholder="(87) 99999-9999"
+    >
 
     <label for="qtd">
       Quantidade de ingressos
@@ -388,12 +381,10 @@ a {
       min="1"
       max="20"
       value="1"
-      required>
+      required
+    >
 
-    <div
-      class="total"
-      id="total"
-      aria-live="polite">
+    <div class="total" id="total">
       Total: R$ 40,00
     </div>
 
@@ -405,131 +396,118 @@ a {
 
       <p
         id="chave-pix"
-        style="
-          overflow-wrap:anywhere;
-          user-select:all;
-          font-size:16px
-        ">
+        style="overflow-wrap:anywhere;user-select:all"
+      >
         ac3d710b-0a86-4660-af19-c567e3cc27bd
       </p>
 
-      <button
-        type="button"
-        id="copiar-pix">
+      <button type="button" id="copiar-pix">
         📋 Copiar chave Pix
       </button>
 
-      <p
-        id="aviso-copia"
-        role="status"
-        aria-live="polite">
-      </p>
+      <p id="aviso-copia" role="status"></p>
 
       <p>
         <strong>Importante:</strong>
-        confira o nome do destinatário
-        no aplicativo do banco antes
-        de confirmar a transferência.
-        O pagamento será validado
-        pela secretaria.
+        confira o nome do destinatário no aplicativo
+        do banco antes de confirmar a transferência.
+        O pagamento será validado pela secretaria.
       </p>
 
     </div>
 
-    <button
-      type="submit"
-      id="botaoPedido">
+    <button type="submit" id="botaoPedido">
       🎟️ Registrar pedido e abrir WhatsApp
     </button>
 
     <p
       id="mensagemPedido"
       role="status"
-      aria-live="polite">
-    </p>
+      aria-live="polite"
+    ></p>
+
+    <div
+      id="opcoesPedido"
+      style="display:none"
+    >
+      <a
+        id="linkWhatsappPedido"
+        class="button"
+        target="_blank"
+        rel="noopener noreferrer"
+        href="#"
+      >
+        Abrir WhatsApp com meu pedido
+      </a>
+
+      <button
+        type="button"
+        id="novoPedido"
+      >
+        Fazer outro pedido
+      </button>
+    </div>
 
     <p class="note">
-      O pedido será enviado ao sistema
-      da secretaria. Depois, o WhatsApp
-      será aberto para que a família
-      envie o comprovante Pix.
-      Os ingressos serão emitidos
-      após a confirmação do pagamento.
+      O pedido será enviado ao sistema da secretaria.
+      Depois, envie o comprovante Pix pelo WhatsApp.
+      Os ingressos serão emitidos após a confirmação
+      do pagamento.
     </p>
 
   </form>
-
 </section>
 
 <section class="panel">
 
-  <p class="badge">
-    COMO FUNCIONA
-  </p>
+  <p class="badge">COMO FUNCIONA</p>
 
   <h2>Sua viagem começa aqui</h2>
 
   <ol class="steps">
     <li>
-      Preencha seu nome, WhatsApp
-      e quantidade de ingressos.
+      Preencha seu nome, WhatsApp e quantidade de ingressos.
     </li>
-
     <li>
-      Confira o valor total
-      e copie a chave Pix.
+      Confira o valor total e copie a chave Pix.
     </li>
-
     <li>
-      Faça o Pix e confira
-      os dados do destinatário.
+      Faça o Pix e confira os dados do destinatário.
     </li>
-
     <li>
-      Clique em Registrar pedido
-      e abrir WhatsApp.
+      Registre seu pedido no site.
     </li>
-
     <li>
-      Anexe o comprovante Pix
-      e envie à secretaria.
+      Abra o WhatsApp e envie o comprovante Pix.
     </li>
-
     <li>
-      Após conferir o pagamento,
-      a secretaria confirmará o pedido.
+      Aguarde a conferência do pagamento pela secretaria.
     </li>
-
     <li>
-      Os ingressos com QR Codes
-      individuais serão enviados
-      pelo WhatsApp.
+      Os ingressos com QR Codes individuais serão
+      enviados pelo WhatsApp.
     </li>
-
     <li>
-      Apresente o QR Code
-      na entrada do teatro.
+      Apresente o QR Code na entrada do teatro.
     </li>
   </ol>
 
   <div class="pix">
-
     <strong>🔒 Atenção</strong>
 
     <p>
-      O registro do pedido não confirma
-      o pagamento. Aguarde a conferência
-      pela secretaria.
+      O registro do pedido não confirma o pagamento.
+      Aguarde a conferência da secretaria.
       Nunca compartilhe senhas bancárias.
     </p>
-
   </div>
 
   <a
     class="button"
     href="https://wa.me/5587991967245"
     target="_blank"
-    rel="noopener noreferrer">
+    rel="noopener noreferrer"
+  >
     Falar com a bilheteria
   </a>
 
@@ -538,32 +516,25 @@ a {
   </p>
 
 </section>
-
 </div>
 
-<section
-  style="
-    text-align:center;
-    padding:60px 12px 20px
-  ">
+<section style="text-align:center;padding:60px 12px 20px">
 
   <p class="eyebrow">
     Prepare-se para viajar no tempo
   </p>
 
   <h2>
-    Uma noite de música,
-    história e emoção
+    Uma noite de música, história e emoção
   </h2>
 
   <p>
-    Das canções que marcaram gerações
-    aos momentos inesquecíveis da história:
-    venha prestigiar nossos alunos!
+    Das canções que marcaram gerações aos momentos
+    inesquecíveis da história: venha prestigiar
+    nossos alunos!
   </p>
 
 </section>
-
 </main>
 
 <footer class="footer">
@@ -571,61 +542,58 @@ a {
   Uma Aventura no Túnel do Tempo · 2026
 </footer>
 
-<!--
-  FORMULÁRIO OCULTO:
-  ENVIA O PEDIDO AO GOOGLE APPS SCRIPT
--->
+<!-- ENVIO OCULTO AO GOOGLE APPS SCRIPT -->
 
 <iframe
   id="respostaPedido"
   name="respostaPedido"
-  style="display:none">
-</iframe>
+  style="display:none"
+  title="Resposta do registro"
+></iframe>
 
 <form
   id="envioPlanilha"
   method="POST"
   target="respostaPedido"
-  style="display:none">
-
+  style="display:none"
+>
   <input name="nome" id="envioNome">
-
   <input name="whatsapp" id="envioTelefone">
-
   <input name="quantidade" id="envioQuantidade">
-
   <input name="protocolo" id="envioProtocolo">
-
 </form>
 
 <script>
+"use strict";
 
-// ENDEREÇO DO GOOGLE APPS SCRIPT
-// JÁ CONFIGURADO PARA A SECRETARIA
+// CONFIGURAÇÃO DA BILHETERIA
 
 const URL_APPS_SCRIPT =
   "https://script.google.com/macros/s/AKfycbx1vJhg3ihvUnCDzkKIua8C6exodoKDWuTJwBYb5h5ljFb2pYMH-D7MRY-u8dbrUQee/exec";
 
-// WHATSAPP DA BILHETERIA
+const WHATSAPP_BILHETERIA = "5587991967245";
+const PRECO_INGRESSO = 40;
 
-const WHATSAPP_BILHETERIA =
-  "5587991967245";
+// TEMPO MÁXIMO DE ESPERA PELA CONFIRMAÇÃO
 
-// ELEMENTOS DO SITE
+const TEMPO_ESPERA = 15000;
 
-const qtd = document.getElementById("qtd");
-
-const total = document.getElementById("total");
+// ELEMENTOS
 
 const formulario = document.getElementById("form");
-
+const qtd = document.getElementById("qtd");
+const total = document.getElementById("total");
 const botao = document.getElementById("botaoPedido");
-
 const mensagem = document.getElementById("mensagemPedido");
+const opcoesPedido = document.getElementById("opcoesPedido");
+const linkWhatsappPedido =
+  document.getElementById("linkWhatsappPedido");
 
 let pedidoPendente = null;
+let temporizador = null;
+let envioRealizado = false;
 
-// FORMATAR VALORES
+// VALORES
 
 function moeda(valor) {
   return valor.toLocaleString("pt-BR", {
@@ -634,8 +602,6 @@ function moeda(valor) {
   });
 }
 
-// ATUALIZAR VALOR TOTAL
-
 function atualizarTotal() {
   const quantidade = Math.max(
     1,
@@ -643,12 +609,12 @@ function atualizarTotal() {
   );
 
   total.textContent =
-    "Total: " + moeda(quantidade * 40);
+    "Total: " + moeda(quantidade * PRECO_INGRESSO);
 }
 
 qtd.addEventListener("input", atualizarTotal);
 
-// COPIAR CHAVE PIX
+// COPIAR PIX
 
 document.getElementById("copiar-pix")
   .addEventListener("click", async function() {
@@ -661,32 +627,21 @@ document.getElementById("copiar-pix")
 
       document.getElementById("aviso-copia")
         .textContent = "Chave Pix copiada!";
-
     } catch (erro) {
-      const elemento =
-        document.getElementById("chave-pix");
-
-      const selecao = window.getSelection();
-      const intervalo = document.createRange();
-
-      intervalo.selectNodeContents(elemento);
-      selecao.removeAllRanges();
-      selecao.addRange(intervalo);
-
       document.getElementById("aviso-copia")
         .textContent =
-        "Selecione e copie a chave Pix exibida acima.";
+        "Copie manualmente a chave Pix acima.";
     }
   });
 
-// EXIBIR MENSAGENS
+// MENSAGENS
 
 function mostrarMensagem(texto, tipo) {
   mensagem.textContent = texto;
   mensagem.className = tipo;
 }
 
-// GERAR PROTOCOLO INDIVIDUAL
+// PROTOCOLO ÚNICO
 
 function criarProtocolo() {
   if (
@@ -702,9 +657,9 @@ function criarProtocolo() {
   );
 }
 
-// ABRIR WHATSAPP DA BILHETERIA
+// LINK DO WHATSAPP
 
-function abrirWhatsApp(pedido) {
+function montarLinkWhatsApp(pedido) {
   const texto =
     "Olá! Fiz uma solicitação de ingressos " +
     "para o Musical 2026 — " +
@@ -717,32 +672,54 @@ function abrirWhatsApp(pedido) {
     "Quantidade: " + pedido.quantidade + "\n" +
 
     "Valor total: " +
-    moeda(pedido.quantidade * 40) + "\n\n" +
+    moeda(pedido.quantidade * PRECO_INGRESSO) +
+    "\n\n" +
 
-    "Protocolo: " + pedido.protocolo + "\n\n" +
+    "Protocolo: " + pedido.protocolo +
+    "\n\n" +
 
-    "Vou anexar o comprovante Pix " +
-    "nesta conversa.\n" +
+    "Vou anexar o comprovante Pix nesta conversa.\n" +
 
     "Aguardo a conferência do pagamento " +
     "e a confirmação dos ingressos.";
 
-  const url =
+  return (
     "https://wa.me/" +
     WHATSAPP_BILHETERIA +
     "?text=" +
-    encodeURIComponent(texto);
-
-  window.location.href = url;
+    encodeURIComponent(texto)
+  );
 }
 
-// ENVIAR PEDIDO À PLANILHA
+// DISPONIBILIZAR WHATSAPP
+
+function mostrarWhatsApp(pedido) {
+  linkWhatsappPedido.href =
+    montarLinkWhatsApp(pedido);
+
+  opcoesPedido.style.display = "block";
+}
+
+// ENCERRAR ESPERA
+
+function pararEspera() {
+  if (temporizador) {
+    clearTimeout(temporizador);
+    temporizador = null;
+  }
+}
+
+// REGISTRAR PEDIDO
 
 formulario.addEventListener(
   "submit",
   function(evento) {
 
     evento.preventDefault();
+
+    if (envioRealizado) {
+      return;
+    }
 
     if (!formulario.reportValidity()) {
       return;
@@ -784,14 +761,14 @@ formulario.addEventListener(
       return;
     }
 
-    if (!pedidoPendente) {
-      pedidoPendente = {
-        nome: nome,
-        telefone: telefone,
-        quantidade: quantidade,
-        protocolo: criarProtocolo()
-      };
-    }
+    pedidoPendente = {
+      nome: nome,
+      telefone: telefone,
+      quantidade: quantidade,
+      protocolo: criarProtocolo()
+    };
+
+    // PREENCHER O FORMULÁRIO OCULTO
 
     document.getElementById("envioNome").value =
       pedidoPendente.nome;
@@ -810,19 +787,76 @@ formulario.addEventListener(
 
     envio.action = URL_APPS_SCRIPT;
 
+    // BLOQUEAR NOVO ENVIO DESTE PEDIDO
+
+    envioRealizado = true;
     botao.disabled = true;
     botao.textContent = "Registrando pedido...";
 
     mostrarMensagem(
       "Aguarde enquanto registramos seu pedido.",
-      "sucesso"
+      "aviso"
     );
 
-    envio.submit();
+    // PREPARAR LINK DO WHATSAPP
+
+    mostrarWhatsApp(pedidoPendente);
+
+    // OCULTAR AS OPÇÕES DURANTE A ESPERA
+
+    opcoesPedido.style.display = "none";
+
+    // ENVIAR PARA O GOOGLE
+
+    try {
+      envio.submit();
+    } catch (erro) {
+      pararEspera();
+
+      botao.textContent = "Envio não confirmado";
+
+      mostrarMensagem(
+        "Não foi possível confirmar o envio. " +
+        "Entre em contato com a secretaria " +
+        "e informe seu protocolo. " +
+        "Não faça outro pedido antes de verificar.",
+        "erro"
+      );
+
+      mostrarWhatsApp(pedidoPendente);
+      return;
+    }
+
+    // EVITAR ESPERA INFINITA
+
+    temporizador = setTimeout(function() {
+
+      if (!pedidoPendente) {
+        return;
+      }
+
+      botao.textContent = "Aguardando conferência";
+
+      mostrarMensagem(
+        "Não recebemos a confirmação automática " +
+        "do Google.\n\n" +
+        "O pedido pode já estar registrado. " +
+        "Clique abaixo para falar com a bilheteria " +
+        "e envie o comprovante Pix.\n\n" +
+        "A secretaria poderá conferir o pedido " +
+        "pelo nome e protocolo. " +
+        "Não registre novamente antes da conferência.",
+        "aviso"
+      );
+
+      mostrarWhatsApp(pedidoPendente);
+
+    }, TEMPO_ESPERA);
+
   }
 );
 
-// RECEBER RESPOSTA DO GOOGLE APPS SCRIPT
+// RECEBER CONFIRMAÇÃO DO GOOGLE
 
 window.addEventListener(
   "message",
@@ -837,7 +871,8 @@ window.addEventListener(
     const origemPermitida =
       origem === "https://script.google.com" ||
       origem === "https://script.googleusercontent.com" ||
-      origem.endsWith(".googleusercontent.com");
+      origem.endsWith(".googleusercontent.com") ||
+      origem === "null";
 
     if (!origemPermitida) {
       return;
@@ -853,41 +888,71 @@ window.addEventListener(
       return;
     }
 
-    botao.disabled = false;
-
-    botao.textContent =
-      "🎟️ Registrar pedido e abrir WhatsApp";
+    pararEspera();
 
     if (
       !dados.resultado ||
       !dados.resultado.sucesso
     ) {
+      botao.textContent = "Envio não confirmado";
+
       mostrarMensagem(
-        "Não foi possível registrar o pedido.\n" +
+        "O Google informou um problema:\n" +
         (
           dados.resultado
             ? dados.resultado.mensagem
             : "Erro desconhecido."
-        ),
+        ) +
+        "\n\nConfirme com a secretaria " +
+        "antes de fazer outro pedido.",
         "erro"
       );
 
+      mostrarWhatsApp(pedidoPendente);
       return;
     }
 
+    botao.textContent = "Pedido registrado";
+
     mostrarMensagem(
-      "Pedido registrado com sucesso! " +
-      "Abrindo o WhatsApp...",
+      "Pedido registrado com sucesso!\n\n" +
+      "Clique no botão abaixo para abrir o " +
+      "WhatsApp e enviar o comprovante Pix.",
       "sucesso"
     );
 
-    const pedidoRegistrado = pedidoPendente;
+    mostrarWhatsApp(pedidoPendente);
 
-    pedidoPendente = null;
+    // ABRIR WHATSAPP AUTOMATICAMENTE
 
-    abrirWhatsApp(pedidoRegistrado);
+    window.location.href =
+      montarLinkWhatsApp(pedidoPendente);
   }
 );
+
+// NOVO PEDIDO SOMENTE POR AÇÃO DO USUÁRIO
+
+document.getElementById("novoPedido")
+  .addEventListener("click", function() {
+
+    pararEspera();
+
+    pedidoPendente = null;
+    envioRealizado = false;
+
+    formulario.reset();
+    atualizarTotal();
+
+    opcoesPedido.style.display = "none";
+
+    mensagem.style.display = "";
+    mensagem.className = "";
+    mensagem.textContent = "";
+
+    botao.disabled = false;
+    botao.textContent =
+      "🎟️ Registrar pedido e abrir WhatsApp";
+  });
 
 </script>
 
